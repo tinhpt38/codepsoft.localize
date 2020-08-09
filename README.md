@@ -38,7 +38,7 @@ import 'package:localize/localize.dart';
 
 Step 1: Create folder "assets/locales" in root project folder
 Step 2: Create file <LangCode>.json. If your project support Vietnamese and English language, files name: vi.json and en.json
-Step 3: In <LangCode>.json file, follow syntaxt of Json:
+Step 3: In <LangCode>.json file, follow syntax of Json:
 - Example:
     - For Vietnamese Language:
 {
@@ -69,7 +69,11 @@ void main() async {
   runApp(MyApp());
 }
 
+# Website
+codepsoft.com
 
+# Document online
+https://codepsoft.com/16-flutter-multi-language/
 
 ## Getting Started
 
