@@ -52,34 +52,38 @@ If your project support Vietnamese and English language, files name: vi.json and
   
 ## Step 3: In <LangCode>.json file, follow syntax of Json:
 - Example:
-    - For Vietnamese Language:
-```
-{
-    "Login": "Đăng nhập",
-    "Register": "Đăng ký",
-    "Phone": "Số điện thoại",
-    "Don't have an account? Register now!": "Không có tài khoảng? Đăng ký ngay!",
-    "Password": "Mật khẩu"
-}
-```
-    - For English Language:
+    - For Vietnamese Language: vi.json
+    ```
+    {
+        "Login": "Đăng nhập",
+        "Register": "Đăng ký",
+        "Phone": "Số điện thoại",
+        "Don't have an account? Register now!": "Không có tài khoảng? Đăng ký ngay!",
+        "Password": "Mật khẩu"
+    }
+    ```
+    - For English Language: en.json
 
-```
-{
-    "Login": "Login",
-    "Register": "Register",
-    "Phone": "Phone",
-    "Don't have an account ? Register now!": "Don't have an account ? Register now!",
-    "Password": "Password"
-}
-```    
+    ```
+    {
+        "Login": "Login",
+        "Register": "Register",
+        "Phone": "Phone",
+        "Don't have an account ? Register now!": "Don't have an account ? Register now!",
+        "Password": "Password"
+    }
+    ```    
 ## Step 4: In pubspec.yaml, add assets to your application, add an assets section, like this:
+  ```
   assets:
       - assets/locales/
+  ```
 
 ## Step 5: Write code in function void main like below:
+```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Translate().withDefaultLocale(Locales.VI);
   runApp(MyApp());
 }
+```
