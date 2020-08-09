@@ -5,6 +5,10 @@ Internationalizing Flutter apps
 Package supported 124 languages.
 Language code: ISO 639-1 standard language codes
 
+
+# Document online
+https://codepsoft.com/16-flutter-multi-language/
+
 # Usage
 - Import: 
 import 'package:localize/localize.dart';
@@ -70,12 +74,6 @@ void main() async {
   await Translate().withDefaultLocale(Locales.VI);
   runApp(MyApp());
 }
-
-# Website
-codepsoft.com
-
-# Document online
-https://codepsoft.com/16-flutter-multi-language/
 
 ## Getting Started
 
