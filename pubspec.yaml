@@ -1,8 +1,8 @@
 name: localize
 description: Internationalizing Flutter apps
 version: 0.0.1
-author:
-homepage:
+author: Phan Trung Tinh <tinhpt.38@gmail.com>
+homepage: https://github.com/tinhpt38/codepsoft.localize.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
