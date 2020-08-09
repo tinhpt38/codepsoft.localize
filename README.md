@@ -22,11 +22,13 @@ import 'package:localize/localize.dart';
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (Translate().langCode == LangCode.vi) {
-            Translate().withDefaultLocale(LangCode.en);
-          } else {
-            Translate().withDefaultLocale(LangCode.vi);
-          }
+            setState(() {
+              if (Translate().langCode == LangCode.vi) {
+                Translate().withDefaultLocale(LangCode.en);
+              } else {
+                Translate().withDefaultLocale(LangCode.vi);
+            }
+          });
         },
         tooltip: 'Change language',
         child: Icon(Icons.add),

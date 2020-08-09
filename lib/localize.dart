@@ -24,7 +24,6 @@ class Translate {
   }
 
   genarateSuportLocale() async {
-    ;
     dynamic _translate = await read(langCode.getString());
     this.translate = json.decode(_translate);
   }
