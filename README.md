@@ -15,6 +15,7 @@ import 'package:localize/localize.dart';
 - Syntaxt: "your string".localize
 - Change Language: Translate().withDefaultLocale(LangCode.en);
 - Example:
+```dart
 import 'package:localize/localize.dart';
 
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ import 'package:localize/localize.dart';
       ),
     );
   }
-
+```
 # Configuration
 
 Step 1: Create folder "assets/locales" in root project folder
@@ -47,6 +48,7 @@ Step 2: Create file <LangCode>.json. If your project support Vietnamese and Engl
 Step 3: In <LangCode>.json file, follow syntax of Json:
 - Example:
     - For Vietnamese Language:
+```json
 {
     "Login": "Đăng nhập",
     "Register": "Đăng ký",
@@ -54,8 +56,9 @@ Step 3: In <LangCode>.json file, follow syntax of Json:
     "Don't have an account? Register now!": "Không có tài khoảng? Đăng ký ngay!",
     "Password": "Mật khẩu"
 }
+```
     - For English Language:
-
+```json
 {
     "Login": "Login",
     "Register": "Register",
@@ -63,18 +66,24 @@ Step 3: In <LangCode>.json file, follow syntax of Json:
     "Don't have an account ? Register now!": "Don't have an account ? Register now!",
     "Password": "Password"
 }
-    
+```
+  
 Step 4: In pubspec.yaml, add assets to your application, add an assets section, like this:
+```yaml
   assets:
       - assets/locales/
-
+```
 Step 5: Write code in function void main like below:
+```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Translate().withDefaultLocale(Locales.VI);
+  await Translate().withDefaultLocale(LangCode.vi);
+  //true if allow
+  await Translate().setAcceptMissingKey(false);
   runApp(MyApp());
 }
-
+```
+```
 ## Getting Started
 
 This project is a starting point for a Dart

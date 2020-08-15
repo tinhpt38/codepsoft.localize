@@ -9,10 +9,15 @@ class Translate {
   LangCode langCode;
   static Translate _instance = Translate._internal();
   Map<String, dynamic> translate = Map<String, dynamic>();
-
+  bool _acceptMissingKey = false;
+  bool get acceptMissingKey => _acceptMissingKey;
   factory Translate() => _instance;
 
   Translate._internal();
+
+  setAcceptMissingKey(bool value) {
+    _acceptMissingKey = value;
+  }
 
   withDefaultLocale(LangCode langCode) async {
     this.langCode = langCode;
@@ -26,14 +31,20 @@ class Translate {
   genarateSuportLocale() async {
     dynamic _translate = await read(langCode.getString());
     this.translate = json.decode(_translate);
+    return this;
   }
 }
 
 extension tranlates on String {
   get localize {
-    return Translate().translate[this] == null
-        ? this
-        : Translate().translate[this];
+    Translate _instance = Translate();
+    if (_instance.acceptMissingKey) {
+      return _instance.translate[this] == null
+          ? this
+          : _instance.translate[this];
+    } else {
+      return _instance.translate[this];
+    }
   }
 
   get child {

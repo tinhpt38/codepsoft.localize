@@ -5,6 +5,7 @@ import 'package:localize/localize.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Translate().withDefaultLocale(LangCode.vi);
+  await Translate().setAcceptMissingKey(false);
   runApp(MyApp());
 }
 
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Text(
-          'Login'.localize,
+          'Logzaaaain'.localize,
         ),
       ),
       floatingActionButton: FloatingActionButton(
